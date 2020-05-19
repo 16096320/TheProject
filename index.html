@@ -4,16 +4,17 @@
 	<title>Hello World!</title>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width"/>
+	<meta name="apple-mobile-web-app-capable"/>
 	<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 </head>
 <body>
 	<a-scene>
 		<a-assets>
-			<video id="onepiece" autoplay loop="false" src="onepieceop1.mp4"></video>
+			<video id="onepiece" autoplay loop="true" src="onepieceop1.mp4"/>
 		</a-assets>
 
 		<a-video src="#onepiece" width="16" height="9" position="0 0 -20"></a-video>
-		
+
 		<a-sound src="src: url(click.mp3)" autoplay="true" position="0 2 5"></a-sound>
 
 		<a-sky src="img/skybox2.jpg"></a-sky>
