@@ -9,7 +9,13 @@
 <body>
 	<a-scene>
 		<a-assets>
+			<video id="onepiece" autoplay loop="false" src="onepieceop1.mp4"></video>
 		</a-assets>
+
+		<a-video src="#onepiece" width="16" height="9" position="0 0 -20"></a-video>
+		
+		<a-sound src="src: url(click.mp3)" autoplay="true" position="0 2 5"></a-sound>
+
 		<a-sky src="img/skybox2.jpg"></a-sky>
 
 		<a-camera>
