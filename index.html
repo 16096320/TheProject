@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width"/>
 	<meta name="apple-mobile-web-app-capable"/>
 	<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+	<script type="text/javascript" scr="js/main.js" defer></script>
 </head>
 <body>
 	<a-scene>
@@ -16,7 +17,7 @@
 
 		<a-video src="#onepiece" width="16" height="9" position="-15 5 0" rotation="5 90 0"></a-video>
 		
-		<a-video src="#onepiece" width="16" height="9" position="0 5 -15" rotation="5 0 0"></a-video>
+		<a-video onmouseover="vidPlay(onepiece)" src="#onepiece" width="16" height="9" position="0 5 -15" rotation="5 0 0"></a-video>
 
 		<a-video src="#onepiece" width="16" height="9" position="15 5 0" rotation="5 -90 0"></a-video>
 
@@ -30,7 +31,7 @@
 		">	
 		</a-sphere>
 
-		<a-sky src="assets/skybox2.jpg"></a-sky>
+		<a-sky src="assets/skybox3.png"></a-sky>
 
 		<a-camera>
 			<a-cursor color="red"/>
