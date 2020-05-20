@@ -11,16 +11,16 @@
 <body>
 	<a-scene>
 		<a-assets>
-			<video id="onepiece" autoplay="false" loop="true" src="assets/onepieceop1.mp4" webkit-playsinline crossorigin="anonymous"></video>
+			<video id="onepiece" src="assets/onepieceop1.mp4" webkit-playsinline crossorigin="anonymous">
+				<a-event name="mouseenter" autoplay="true" color="blue"></a-event>
+			</video>
 			<audio id="naruto" src="assets/narutosound.mp3"></audio>
 		</a-assets>
 
 		<a-video src="" width="16" height="9" position="-15 5 0" rotation="5 90 0"></a-video>
 		
 		<a-text value="Hello, World!" position="0 15 -15"></a-text>
-		<a-video  src="#onepiece" width="16" height="9" position="0 5 -15" rotation="5 0 0">
-			<a-event name="mouseenter" autoplay="true" color="blue"></a-event> 
-		</a-video>
+		<a-video  src="#onepiece" width="16" height="9" position="0 5 -15" rotation="5 0 0"></a-video>
 
 		<a-video src="" width="16" height="9" position="15 5 0" rotation="5 -90 0"></a-video>
 
