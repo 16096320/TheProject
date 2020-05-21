@@ -11,9 +11,7 @@
 <body>
 	<a-scene>
 		<a-assets>
-			<video id="onepiece" src="assets/onepieceop1.mp4" webkit-playsinline crossorigin="anonymous">
-			</video>
-			<audio id="naruto" src="assets/narutosound.mp3"></audio>
+			<video autoplay loop="true" id="onepiece" src="assets/onepieceop1.mp4" webkit-playsinline crossorigin="anonymous"></video>
 		</a-assets>
 
 		<a-entity geometry="
@@ -23,15 +21,13 @@
 		depth: 0.01"
 		position="-15 5 0"
 		rotation="5 90 0"
-		material="color: #000000"
-		borderColor="yellow"
-		>
+		material="color: #000000">
 			<a-text value="What is Anime?" color="white" position="-4 3.2 0.1" rotation="5 0 0" width="15"></a-text>
 			<a-text value="The word anime is the Japanese term for animation, which means all forms of animated media.Outside Japan, anime refers specifically to animation from Japan or as a Japanese-disseminated animation style often characterized by colorful graphics, vibrant characters and fantastical themes." color="white" position="-3.8 1 0.1" width="8"></a-text>
-
+			<a-text value="Do yourself a favor and watch the japanese version with english(or whatever other language) subtitles!" color="white" position="-3.8 -2 0.1" width="8"></a-text>
 		</a-entity>
 
-		<a-text value="Hello, World!" position="0 15 -15"></a-text>
+		<a-text value="The best Anime. One Piece!" position="-8 10.5 -15" width="20" color="blue"></a-text>
 		<a-video  src="#onepiece" width="16" height="9" position="0 5 -15" rotation="5 0 0">
 			<a-event name="mouseenter" autoplay="true" color="blue"></a-event>
 		</a-video>
@@ -52,10 +48,11 @@
 			<a-text value="5. Demon Slayer" color="white" position="-1 -0.7 0.2" width="3"></a-text>
 		</a-entity>
 
-
 		<a-video src="" width="16" height="9" position="15 5 0" rotation="5 -90 0" color="yellow">
 			<a-event name="mouseenter" color="#0000ff"></a-event>
 		</a-video>
+
+		<a-entity geometry="primitive: circle; radius: 1" material="side: double; color:#000000" position="0 -1 0" rotation="90 0 0"></a-entity>
 
 		<a-sphere 
 		color="blue" 
