@@ -16,14 +16,44 @@
 			<audio id="naruto" src="assets/narutosound.mp3"></audio>
 		</a-assets>
 
-		<a-video src="" width="16" height="9" position="-15 5 0" rotation="5 90 0"></a-video>
-		
+		<a-entity geometry="
+		primitive: box; 
+		width: 10; 
+		height: 9; 
+		depth: 0.01"
+		position="-15 5 0"
+		rotation="5 90 0"
+		material="color: #000000"
+		borderColor="yellow"
+		>
+			<a-text value="What is Anime?" color="white" position="-4 3.2 0.1" rotation="5 0 0" width="15"></a-text>
+			<a-text value="The word anime is the Japanese term for animation, which means all forms of animated media.Outside Japan, anime refers specifically to animation from Japan or as a Japanese-disseminated animation style often characterized by colorful graphics, vibrant characters and fantastical themes." color="white" position="-3.8 1 0.1" width="8"></a-text>
+
+		</a-entity>
+
 		<a-text value="Hello, World!" position="0 15 -15"></a-text>
 		<a-video  src="#onepiece" width="16" height="9" position="0 5 -15" rotation="5 0 0">
 			<a-event name="mouseenter" autoplay="true" color="blue"></a-event>
 		</a-video>
 
-		<a-video src="" width="16" height="9" position="15 5 0" rotation="5 -90 0">
+		<a-entity geometry="
+		primitive: box; 
+		width: 2.5; 
+		height: 2.2; 
+		depth: 0.010"
+		position="-2 0 -3"
+		rotation="-5 10 0"
+		material="color: #000000">
+			<a-text value="Beste Animes for Beginners" color="white" position="-1 0.8 0.2" width="3"></a-text>
+			<a-text value="1. Full Metal Alchemist: Brotherhood" color="white" position="-1 0.5 0.2" width="3"></a-text>
+			<a-text value="2. One Piece" color="white" position="-1 0.2 0.2" width="3"></a-text>
+			<a-text value="3. Attack on Titan" color="white" position="-1 -0.1 0.2" width="3"></a-text>
+			<a-text value="4. My Hero Academia" color="white" position="-1 -0.4 0.2" width="3"></a-text>
+			<a-text value="5. Demon Slayer" color="white" position="-1 -0.7 0.2" width="3"></a-text>
+		</a-entity>
+
+
+		<a-video src="" width="16" height="9" position="15 5 0" rotation="5 -90 0" color="yellow">
 			<a-event name="mouseenter" color="#0000ff"></a-event>
 		</a-video>
 
@@ -35,6 +65,7 @@
 		on:click;
 		volume:1
 		">	
+			<a-event name="mouseenter" color="#ff0000"></a-event>
 		</a-sphere>
 
 		<a-sky src="assets/skybox3.png"></a-sky>
@@ -42,7 +73,6 @@
 		<a-camera>
 			<a-cursor color="orange"></a-cursor>
 		</a-camera>
-
 	</a-scene>
 </body>
 </html>
