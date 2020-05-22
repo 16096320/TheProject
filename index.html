@@ -7,11 +7,19 @@
 	<meta name="apple-mobile-web-app-capable"/>
 	<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 	<script type="text/javascript" scr="js/main.js" defer></script>
+	<script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
 </head>
 <body>
 	<a-scene>
 		<a-assets>
-			<video autoplay loop="true" id="onepiece" src="assets/onepieceop1.mp4" webkit-playsinline crossorigin="anonymous"></video>
+			<video autoplay loop="false" id="onepiece" src="assets/onepieceop1.mp4" webkit-playsinline crossorigin="anonymous"></video>
+        <img id="steel" src="assets/steel.jpg" />
+        <img id="wwood" src="assets/whitewood.jpg" />
+        <img id="onepieceimg" src="assets/onepieceimg.jpg">
+        <img id="fmab" src="assets/fmab.jpg">
+        <img id="aot" src="assets/aotimg.jpg">
+        <img id="hero" src="assets/hero.png">
+        <img id="demon" src="assets/demonimg.jpg">
 		</a-assets>
 
 		<a-entity geometry="
@@ -27,48 +35,154 @@
 			<a-text value="Do yourself a favor and watch the japanese version with english(or whatever other language) subtitles!" color="white" position="-3.8 -2 0.1" width="8"></a-text>
 		</a-entity>
 
-		<a-text value="The best Anime. One Piece!" position="-8 10.5 -15" width="20" color="blue"></a-text>
-		<a-video  src="#onepiece" width="16" height="9" position="0 5 -15" rotation="5 0 0">
-			<a-event name="mouseenter" autoplay="true" color="blue"></a-event>
+		<!-- <a-entity geometry="primitive: box; width:16; height:9; depth:0.01" 
+		position="0 5 -15" 
+		rotation="5 0 0" 
+		material="color: yellow"
+		id="banner">
+		</a-entity> -->
+
+		<a-image id="banner"
+		width="16"
+		height="9"
+		position="0 5 -15" 
+		rotation="5 0 0"
+		opacity>
+			<a-text value="Select a number" color="#87b1ff" position="-8 5 0" width="15"></a-text>
+		</a-image>
+
+		<a-entity position="-0.5 0 -1"
+		rotation="0 -45 0">
+			<a-entity 
+			geometry="primitive: box;
+			 width: 0.5; 
+			 height: 0.5; 
+			 depth: 0.010"
+			position="0 1 -2"
+			rotation="-10 0 0"
+			material="color: #999999"
+			event-set__imgchange="_event: mouseenter; _target: #banner; src: #fmab"
+			event-set__color="_event: mouseenter; material.color: blue"
+			event-set__back="_event: mouseleave; material.color: #999999">
+				<a-text value="1" color="white" position="-0.07 0 0.01" width="4"></a-text> 	
+			</a-entity>
+			<a-entity 
+			geometry="primitive: box;
+			 width: 0.5; 
+			 height: 0.5; 
+			 depth: 0.010"
+			position="1 1 -2"
+			rotation="-10 0 0"
+			material="color: #999999"
+			event-set__imgchange="_event: mouseenter; _target: #banner; src: #onepieceimg"
+			event-set__color="_event: mouseenter; material.color: blue"
+			event-set__back="_event: mouseleave; material.color: #999999">
+				<a-text value="2" color="white" position="-0.07 0 0.01" width="4"></a-text> 	
+			</a-entity>
+			<a-entity 
+			geometry="primitive: box;
+			 width: 0.5; 
+			 height: 0.5; 
+			 depth: 0.010"
+			position="2 1 -2"
+			rotation="-10 0 0"
+			material="color: #999999"
+			event-set__imgchange="_event: mouseenter; _target: #banner; src: #aot"
+			event-set__color="_event: mouseenter; material.color: blue"
+			event-set__back="_event: mouseleave; material.color: #999999">
+				<a-text value="3" color="white" position="-0.07 0 0.01" width="4"></a-text> 	
+			</a-entity>
+
+			<a-entity 
+			geometry="primitive: box;
+			 width: 0.5; 
+			 height: 0.5; 
+			 depth: 0.010"
+			position="0.5 0.25 -2"
+			rotation="-10 0 0"
+			material="color: #999999"
+			event-set__imgchange="_event: mouseenter; _target: #banner; src: #hero"
+			event-set__color="_event: mouseenter; material.color: blue"
+			event-set__back="_event: mouseleave; material.color: #999999">
+				<a-text value="4" color="white" position="-0.07 0 0.01" width="4"></a-text> 	
+			</a-entity>
+
+			<a-entity 
+			geometry="primitive: box;
+			 width: 0.5; 
+			 height: 0.5; 
+			 depth: 0.010"
+			position="1.5 0.25 -2"
+			rotation="-10 0 0"
+			material="color: #999999"
+			event-set__imgchange="_event: mouseenter; _target: #banner; src: #demon"
+			event-set__color="_event: mouseenter; material.color: blue"
+			event-set__back="_event: mouseleave; material.color: #999999">
+				<a-text value="5" color="white" position="-0.07 0 0.01" width="4"></a-text> 	
+			</a-entity>
+		</a-entity>
+
+
+		<a-video 
+		src="#onepiece" 
+		width="16" 
+		height="9" 
+		position="15 5 0" 
+		rotation="5 -90 0">
+			<a-text value="The best Anime. One Piece!" position="-8 6 0" width="20" color="blue"></a-text>
 		</a-video>
 
 		<a-entity geometry="
 		primitive: box; 
-		width: 2.5; 
+		width: 3; 
 		height: 2.2; 
 		depth: 0.010"
-		position="-2 0 -3"
-		rotation="-5 10 0"
-		material="color: #000000">
-			<a-text value="Beste Animes for Beginners" color="white" position="-1 0.8 0.2" width="3"></a-text>
-			<a-text value="1. Full Metal Alchemist: Brotherhood" color="white" position="-1 0.5 0.2" width="3"></a-text>
-			<a-text value="2. One Piece" color="white" position="-1 0.2 0.2" width="3"></a-text>
-			<a-text value="3. Attack on Titan" color="white" position="-1 -0.1 0.2" width="3"></a-text>
-			<a-text value="4. My Hero Academia" color="white" position="-1 -0.4 0.2" width="3"></a-text>
-			<a-text value="5. Demon Slayer" color="white" position="-1 -0.7 0.2" width="3"></a-text>
+		position="-2 0 -2"
+		rotation="-30 40 0"
+		material="src: #wwood">
+			<a-text value="Beste Animes for Beginners" 
+			color="#404040" 
+			position="-1 0.8 0.2" 
+			width="3">
+			</a-text>
+			<a-text value="1. Full Metal Alchemist: Brotherhood" 
+			color="#404040" 
+			position="-1 0.5 0.2" 
+			width="3">
+			</a-text>
+			<a-text value="2. One Piece" 
+			color="#404040" 
+			position="-1 0.2 0.2" 
+			width="3">
+			</a-text>
+			<a-text value="3. Attack on Titan" 
+			color="#404040" 
+			position="-1 -0.1 0.2"
+			 width="3">
+			 </a-text>
+			<a-text value="4. My Hero Academia" 
+			color="#404040" 
+			position="-1 -0.4 0.2"
+			 width="3">
+			 </a-text>
+			<a-text value="5. Demon Slayer" 
+			color="#404040" 
+			position="-1 -0.7 0.2"
+			 width="3">
+			 </a-text>
 		</a-entity>
 
-		<a-video src="" width="16" height="9" position="15 5 0" rotation="5 -90 0" color="yellow">
-			<a-event name="mouseenter" color="#0000ff"></a-event>
-		</a-video>
-
-		<a-entity geometry="primitive: circle; radius: 1" material="side: double; color:#000000" position="0 -1 0" rotation="90 0 0"></a-entity>
-
-		<a-sphere 
-		color="blue" 
-		radius="5" 
-		position="0 25 0" 
-		sound="src:#naruto;
-		on:click;
-		volume:1
-		">	
-			<a-event name="mouseenter" color="#ff0000"></a-event>
-		</a-sphere>
+		<a-entity 
+		geometry="primitive: circle; radius: 20" 
+		material="side: double; src: #steel; repeat: 15 15" 
+		position="0 -1 0" 
+		rotation="90 0 0">			
+		</a-entity>
 
 		<a-sky src="assets/skybox3.png"></a-sky>
 
-		<a-camera>
-			<a-cursor color="orange"></a-cursor>
+		<a-camera position="0 1.6 0">
+			<a-cursor color="orange" raycaster="showLine: true"></a-cursor>
 		</a-camera>
 	</a-scene>
 </body>
